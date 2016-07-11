@@ -1,0 +1,79 @@
+    /*----------------------------------------------
+    Method get
+    Gets a bigInt from the user. 
+    Parameters: Console object.
+    Return Value: None
+    ----------------------------------------------*/
+    public void get (Console c)
+    {
+	String a;
+	a = c.readString ();
+	this.size = 0;
+
+	for (int i = 0 ; i < a.length () ; i++)
+	    this.addDigitBack (a.charAt (i) - '0');
+
+	this.removeLeadingZeros ();
+    }
+
+
+    /*----------------------------------------------
+    Method removeLeadingZeros
+    Removes any excess zeros at the front of the array.
+    Parameters: None
+    Return Value: None
+    ----------------------------------------------*/
+    public void removeLeadingZeros ()
+    {
+        int[] old;
+        while ((this.digits [this.size - 1] == 0) && (size > 1))
+            this.size--;
+        
+        old = this.digits;
+        this.digits = new int [this.size];
+
+        for (int a = 0 ; a < this.size ; a++)
+            this.digits [a] = old [a];
+    }
+
+
+    /*----------------------------------------------
+    Method addDigitFront
+    Adds a given integer to the front of the current 
+    BigInt.
+    Parameters: Given integer.
+    Return Value: None
+    ----------------------------------------------*/
+    public void addDigitFront (int added)
+    {
+	int[] oldDigit;
+	oldDigit = this.digits;
+
+	this.size++;
+	this.digits = new int [this.size];
+
+	for (int i = 1 ; i < this.size ; i++)
+	    this.digits [i] = oldDigit [i - 1];
+	this.digits [0] = added;
+    }
+
+
+    /*----------------------------------------------
+    Method addDigitBack
+    Adds a given integer to the back of the current 
+    BigInt.
+    Parameters: Given integer.
+    Return Value: None
+    ----------------------------------------------*/
+    public void addDigitBack (int added)
+    {
+	int[] oldDigit;
+	oldDigit = this.digits;
+
+	this.size++;
+	this.digits = new int [this.size];
+
+	for (int i = 0 ; i < this.size - 1 ; i++)
+	    this.digits [i] = oldDigit [i];
+	this.digits [this.size - 1] = added;
+    }

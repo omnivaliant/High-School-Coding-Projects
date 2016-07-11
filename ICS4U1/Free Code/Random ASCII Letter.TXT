@@ -1,0 +1,1 @@
+this.letter = (char)((Math.random() * 26) + 'A');
