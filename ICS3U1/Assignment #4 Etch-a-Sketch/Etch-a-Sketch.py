@@ -224,6 +224,10 @@ drawUp(30,5,"red")
 setCursorPoint(180,10)
 drawDown(32,5,"red")
 
+# Sun
+setCursorPoint (1200, 40)
+drawCircle(120,10,"yellow","yellow")
+
 #Mohit Name
 #M
 setCursorPoint(100,500)
@@ -270,7 +274,6 @@ drawRight(200,10,"dodger blue")
 setCursorPoint(1200,200)
 drawDown(300,10,"dodger blue")
 
-
 #Happy Face
 
 setCursorPoint(400,260)
@@ -311,25 +314,59 @@ for count in range(0,9):
     drawRight(50,5,"yellow")
 
 #Cars
-#Grey Car
+rand = random.randint(1,4)
 setCursorPoint(220,525)
-drawCircle(20,5,"grey","black")
-setCursorPoint(370,525)
-drawCircle(20,5,"grey","black")
-setCursorPoint(200,520)
-drawRight(210,20,"dark grey")
-setCursorPoint(240,490)
-drawRight(100,40,"dark grey")
+
+if rand == 1:
+    #Grey Car
+    drawCircle(20,5,"grey","black")
+    setCursorPoint(370,525)
+    drawCircle(20,5,"grey","black")
+    setCursorPoint(200,520)
+    drawRight(210,20,"dark grey")
+    setCursorPoint(240,490)
+    drawRight(100,40,"dark grey")
+elif rand == 2:     
+    #Blue Car
+    drawCircle(20,5,"blue","black")
+    setCursorPoint(370,525)
+    drawCircle(20,5,"blue","black")
+    setCursorPoint(200,520)
+    drawRight(210,20,"blue")
+    setCursorPoint(240,490)
+    drawRight(100,40,"blue")
+elif rand == 3:    
+    #Yellow
+    drawCircle(20,5,"yellow","black")
+    setCursorPoint(370,525)
+    drawCircle(20,5,"yellow","black")
+    setCursorPoint(200,520)
+    drawRight(210,20,"yellow")
+    setCursorPoint(240,490)
+    drawRight(100,40,"yellow")
+else:    
+    #Pink
+    drawCircle(20,5,"pink","black")
+    setCursorPoint(370,525)
+    drawCircle(20,5,"pink","black")
+    setCursorPoint(200,520)
+    drawRight(210,20,"pink")
+    setCursorPoint(240,490)
+    drawRight(100,40,"pink")
+
+
+
 #Red Truck
-setCursorPoint(1030,525)
+rand = random.randint(700,1060)
+setCursorPoint(rand + 30,525)
 drawCircle(20,5,"grey","black")
-setCursorPoint(1200,525)
+setCursorPoint(rand + 200,525)
 drawCircle(20,5,"grey","black")
-setCursorPoint(1000,490)
+setCursorPoint(rand,490)
 drawRight(150,75,"red")
-setCursorPoint(1000,517.5)
+setCursorPoint(rand,517.5)
 drawRight(250,25,"red")
-setCursorPoint(1150,460)
+setCursorPoint(rand + 150,460)
 drawDiagonal(335,110,10,"red")
 
 #Scenery
@@ -345,7 +382,7 @@ for count in range(1,41):
         drawCircle(10,10,"yellow","yellow")
         setCursorPoint(randomX+5,randomY+12)
         drawDown(10,5,"light green")
-    
+
 mainloop()
 
 
